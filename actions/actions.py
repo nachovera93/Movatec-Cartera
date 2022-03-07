@@ -205,7 +205,7 @@ class ActionQuestion(Action):
         llamarDB(uniqueid)
         progreso(1,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         ConverterDate()
-        dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {dia} de {nombreMes} del {anio} en nuestro sitio web, triple doble b .tarjetacencosud punto cl. Para mayor información, llamar al fono 223637830, entre 8  45 horas a 18  45 horas, de Lunes a Viernes, y Sábados desde 9:00  a 14:00 horas. Le informamos que esta conversación fue grabada por su seguridad, muchas gracias. | EXIT') 
+        dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {dia} de {nombreMes} del dos mil {anio} en nuestro sitio web, triple doble b .tarjetacencosud punto cl. Para mayor información, llamar al fono 223637830, entre 8  45 horas a 18  45 horas, de Lunes a Viernes, y Sábados desde 9:00  a 14:00 horas. Le informamos que esta conversación fue grabada por su seguridad, muchas gracias. | EXIT') 
         progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         return []
 
