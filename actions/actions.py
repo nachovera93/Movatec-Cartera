@@ -188,7 +188,7 @@ class ActionQuestion(Action):
         uniqueid = tracker.sender_id
         llamarDB(uniqueid)
         ConverterDate()
-        dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {dia} de {nombreMes} del {anio} en nuestro sitio web triple doble b .tarjetacencosud.cl ,para mayor información llamar al fono 223637830 entre 8:45 a 18:45 de Lunes a Viernes y Sábados de 9:00 a 14:00 hrs. Le informamos que esta conversación fue grabada por su seguridad muchas gracias. | EXIT') 
+        dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {dia} de {nombreMes} del {anio} en nuestro sitio web triple doble b .tarjetacencosud punto cl. Para mayor información llamar al fono 223637830 entre 8:45 a 18:45 de Lunes a Viernes, y Sábados desde 9:00 a 14:00 hrs. Le informamos que esta conversación fue grabada por su seguridad muchas gracias. | EXIT') 
            
         return []
 
