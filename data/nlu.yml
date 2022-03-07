@@ -8,6 +8,9 @@ nlu:
     - [claro](respuesta)
     - [correcto](respuesta)
     - eso suena bien
+    - [y](respuesta)
+    - [i](respuesta)
+    - [yy](respuesta) 
     - [yes](respuesta)
     - [si](respuesta) porfavor
     - [porsupuesto](respuesta)
