@@ -21,8 +21,8 @@ global entrega_info
 SiPaga=None
 NoPaga=None
 razon=None
-tipo_contacto=None
-compromiso_p=None
+tipo_contacto=0
+compromiso_p=0
 derivacion=None
 fecha_com=None
 entrega_info=None
@@ -144,15 +144,15 @@ def ConverterDate():
 
 
 def llamarDB(uniqueid):
-    #database = DataBase()
+    database = DataBase()
     database.select_user(uniqueid)
 
 def progreso(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
-    #database = DataBase()
+    database = DataBase()
     database.update_user(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
 
 def TipoContacto(uniqueid):
-    #database = DataBase()
+    database = DataBase()
     database.tipo_contacto(uniqueid)
 
 class ActionHello(Action):

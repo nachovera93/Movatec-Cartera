@@ -57,6 +57,8 @@ nlu:
     - [con ella](respuesta)
     - [ok](respuesta)
     - [ti](respuesta)
+    - [di](respuesta)
+    - [wi](respuesta)
     - [tiii](respuesta)
     - [mande](respuesta)
     - [mandé](respuesta)
