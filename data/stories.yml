@@ -1,0 +1,47 @@
+version: "2.0"
+stories:
+
+  - story: no es y si conoce
+    steps:
+    - intent: saludos
+    - action: action_slot_reset
+    - action: action_hello #Buenas tardes, ¿Hablo con {nombre}?'
+    - intent: negación
+      entities:
+      - respuesta: no
+    - action: persona_form
+    - active_loop: persona_form
+    - slot_was_set:
+      - es_o_no: no
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_no_paga   #Disculpe las molestias. Muchas Gracias | EXIT
+    - action: action_restart2
+
+
+
+  - story: si es y si paga
+    steps:
+    - intent: saludos
+    - action: action_slot_reset
+    - action: action_hello   #Buenas tardes, ¿Hablo con {nombre}?'
+    - intent: afirmación
+      entities:
+      - respuesta: si 
+    - action: persona_form
+    - active_loop: persona_form
+    - slot_was_set:
+      - es_o_no: si
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_ask_question #{primernombre}, Le recordamos que se encuentra | EXIT
+    - action: action_restart2
+
+
+
+
+ 
+
+

@@ -1,0 +1,51 @@
+
+version: "2.0"
+rules:
+
+    
+  - rule: fallback2
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default_repetir
+
+  - rule: eres bot1?
+    steps:
+      - action: action_hello
+      - intent: eres_humano
+      - action: utter_bot
+      - action: action_hello2  #Disculpe, Me comunico con {primernombre}?
+
+      
+  - rule: fallback
+    steps:
+      - intent: out_of_scope
+      - action: utter_default
+
+
+
+  - rule: me repite 1
+    steps:
+      - action: action_hello
+      - intent: me_repite
+      - action: action_hello
+
+
+  - rule: me repite 11
+    steps:
+      - action: action_hello2
+      - intent: me_repite
+      - action: action_hello2
+
+  - rule: donde 3
+    steps:
+      - intent: de_donde
+      - action: action_hello2
+      
+  - rule: despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+      - action: action_restart2  
+
+ 
+
