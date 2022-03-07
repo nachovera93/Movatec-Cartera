@@ -57,6 +57,10 @@ nlu:
     - [tiii](respuesta)
     - [mande](respuesta)
     - [mandé](respuesta)
+    - [digame](respuesta)
+    - [diga](respuesta)
+    - [soy yo](respuesta)
+    - si [soy yo](respuesta)
 - intent: negación
   examples: |
     - [negativo](respuesta)
@@ -182,7 +186,6 @@ nlu:
 
 - intent: out_of_scope
   examples: |
-    - digame
     - cuenteme
     - yo creo
     - ah ya
