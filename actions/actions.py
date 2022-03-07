@@ -13,7 +13,7 @@ import pymysql
 
 class DataBase:
     def __init__(self):
-        self.connection=pymysql.connect(host='172.16.1.141',
+        self.connection=pymysql.connect(host='45.225.92.195',
                              user='cron',
                              password='T3c4dmin1234.',
                              database='asterisk',
