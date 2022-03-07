@@ -10,7 +10,22 @@ from rasa_sdk.events import Restarted
 from rasa_sdk.events import AllSlotsReset
 import mysql.connector
 import pymysql
-
+global SiPaga
+global NoPaga
+global razon
+global tipo_contacto
+global compromiso_p
+global derivacion
+global fecha_com
+global entrega_info
+SiPaga=None
+NoPaga=None
+razon=None
+tipo_contacto=None
+compromiso_p=None
+derivacion=None
+fecha_com=None
+entrega_info=None
 class DataBase:
     def __init__(self):
         self.connection=pymysql.connect(host='45.225.92.195',
@@ -149,6 +164,7 @@ class ActionHello(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         llamarDB(uniqueid)
+        progreso(7,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         t = datetime.datetime.now()
         if 23 >= int(t.hour) >= 12:
              dispatcher.utter_message(f'Buenas tardes, ¿Hablo con {nombre}?')
@@ -187,9 +203,10 @@ class ActionQuestion(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         llamarDB(uniqueid)
+        progreso(1,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         ConverterDate()
         dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {dia} de {nombreMes} del {anio} en nuestro sitio web, triple doble b .tarjetacencosud punto cl. Para mayor información, llamar al fono 223637830 entre: 8 y 45 horas a 18 y 45 horas, de Lunes a Viernes, y Sábados desde 9:00  a 14:00 horas. Le informamos que esta conversación fue grabada por su seguridad, muchas gracias. | EXIT') 
-           
+        progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         return []
 
        
@@ -202,7 +219,10 @@ class ActionSiPaga(Action):
         return "action_no_paga"
 
     def run(self, dispatcher, tracker, domain):
-        
+        global uniqueid
+        uniqueid = tracker.sender_id
+        llamarDB(uniqueid)
+        progreso(4,razon,4,derivacion,fecha_com,"Si",uniqueid)
         dispatcher.utter_message(f"Disculpe las molestias. Muchas Gracias | EXIT")
         
         return []
