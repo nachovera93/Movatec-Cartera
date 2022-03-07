@@ -29,7 +29,7 @@ entrega_info=None
 class DataBase:
     def __init__(self):
         self.connection=pymysql.connect(host='45.228.211.131',
-                             user='cron',
+                             user='root',
                              password='T3c4dmin1234.',
                              database='asterisk',
                              )
