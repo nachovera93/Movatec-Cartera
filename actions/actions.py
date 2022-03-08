@@ -76,9 +76,29 @@ class DataBase:
               
         except Exception as e:
             raise
+    def close(self):
+        try:
+            self.connection.close()
+            print("Sesion cerrada exitosamente!")
+            #agi.verbose("Database cerrada exitosamente!")
+        except Exception as e:
+            raise
+
+
+class DataBase2:
+    def __init__(self):
+        self.connection=pymysql.connect(host='45.228.211.131',
+                             user='root',
+                             password='T3c4dmin1234.',
+                             database='asterisk',
+                             )
+        self.cursor = self.connection.cursor()
+        print("Conexion exitosa database2!")
+
+
     def tipo_contacto(self,uniqueid):
         sql = "SELECT tipo_contacto, max(fecha_llamada) from bot_movatec where lead_id='{}'".format(uniqueid)
-       # sql = "UPDATE usuarios SET name='{}' WHERE id = {}".format(name,id)
+     
         try:
             self.cursor.execute(sql)
             user = self.cursor.fetchone()
@@ -89,7 +109,7 @@ class DataBase:
             raise 
     def update_user(self,tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
         sql = "UPDATE bot_movatec SET tipo_contacto='{}',motivo='{}',compromiso_p='{}',derivacion='{}',fecha_com='{}',entrega_info='{}' WHERE lead_id='{}'".format(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
-       # sql = "UPDATE usuarios SET name='{}' WHERE id = {}".format(name,id)
+      
         
         try:
             self.cursor.execute(sql)
@@ -105,6 +125,8 @@ class DataBase:
             raise
 
 database = DataBase()
+database2 = DataBase2()
+
 
 
 """
@@ -149,11 +171,11 @@ def llamarDB(uniqueid):
 
 def progreso(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
     #database = DataBase()
-    database.update_user(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
+    database2.update_user(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
 
 def TipoContacto(uniqueid):
     #database = DataBase()
-    database.tipo_contacto(uniqueid)
+    database2.tipo_contacto(uniqueid)
 
 class ActionHello(Action):
     def name(self):
