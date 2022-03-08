@@ -28,7 +28,7 @@ fecha_com=None
 entrega_info=None
 class DataBase:
     def __init__(self):
-        self.connection=pymysql.connect(host='localhost',
+        self.connection=pymysql.connect(host='10.3.0.5',
                              user='root',
                              password='T3c4dmin1234.',
                              database='asterisk',
