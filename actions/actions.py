@@ -202,7 +202,7 @@ class ActionHello2(Action):
         return "action_hello2"
 
     def run(self, dispatcher, tracker, domain):
-        #database = DataBase()
+        database = DataBase()
         global uniqueid
         uniqueid = tracker.sender_id
         #print("uniqueid: ", tracker.sender_id)
