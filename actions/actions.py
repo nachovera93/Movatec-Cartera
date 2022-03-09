@@ -187,7 +187,7 @@ def Querys(uniqueid):
         monto=data["data"][0]["address2"]
         fechaVencimiento=data["data"][0]["city"]
         primernombre=data["data"][0]["first_name"]
-        rut=data["data"][0]["owner"]
+        rut=data["data"][0]["vendor_lead_code"]
         campania=data["data"][0]["campaign_name"]
 
 """
@@ -203,7 +203,7 @@ def Querys(uniqueid):
             "vendor_lead_code": "170099999"
 """
 
-def Updates(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,lead_id):
+def Updates(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,lead_id,rut):
           payload={'action': 'update',
           'tipo_contacto': f'{tipo_contacto}',
           'motivo': f'{motivo}',
@@ -211,7 +211,8 @@ def Updates(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,
           'derivacion': f'{derivacion}',
           'fecha_com': f'{fecha_com}',
           'entrega_info': f'{entrega_info}',
-          'lead_id': f'{lead_id}'}
+          'lead_id': f'{lead_id}'
+          'rut': f'{rut}'}
           files=[
           ]
           headers = {}
