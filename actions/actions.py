@@ -211,7 +211,7 @@ def Updates(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,
           'derivacion': f'{derivacion}',
           'fecha_com': f'{fecha_com}',
           'entrega_info': f'{entrega_info}',
-          'lead_id': f'{lead_id}'
+          'lead_id': f'{lead_id}',
           'rut': f'{rut}'}
           files=[
           ]
