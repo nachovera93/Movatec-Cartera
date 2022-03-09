@@ -1,19 +1,27 @@
 
 version: "2.0"
 rules:
-
-    
   - rule: fallback2
     steps:
       - intent: nlu_fallback
       - action: utter_default_repetir
-
+   
+ 
   - rule: eres bot1?
     steps:
       - action: action_hello
       - intent: eres_humano
       - action: utter_bot
-      - action: action_hello2  #Disculpe, Me comunico con {primernombre}?
+      - action: action_hello2
+
+  - rule: eres bot2?
+    steps:
+      - action: action_ask_question
+      - intent: eres_humano
+      - action: utter_bot  #utter_bot
+      - action: action_ask_question2  #Disculpe, Me comunico con primernombre?
+      - action: action_ask_question
+
 
       
   - rule: fallback
@@ -29,6 +37,12 @@ rules:
       - intent: me_repite
       - action: action_hello
 
+  - rule: me repite 2
+    steps:
+      - action: action_ask_question
+      - intent: me_repite
+      - action: action_ask_question
+
 
   - rule: me repite 11
     steps:
@@ -36,11 +50,40 @@ rules:
       - intent: me_repite
       - action: action_hello2
 
+
+  - rule: me repite 13
+    steps:
+      - action: action_donde  #Nos estamos comunicando por encargo Cencosud Scotiabank
+      - intent: me_repite
+      - action: action_donde
+
+
+  - rule: me repite 14
+    steps:
+      - action: action_donde2
+      - intent: me_repite
+      - action: action_donde2
+
+
+  - rule: donde 2
+    steps:
+      - action: action_ask_question
+      - intent: de_donde
+      - action: action_donde2
+
+  - rule: donde 3
+    steps:
+      - action: action_hello
+      - intent: de_donde
+      - action: action_donde
+      - action: action_hello2
+
   - rule: donde 3
     steps:
       - intent: de_donde
-      - action: action_hello2
-      
+      - action: action_donde
+
+  
   - rule: despedida
     steps:
       - intent: despedida
@@ -48,4 +91,5 @@ rules:
       - action: action_restart2  
 
  
+  
 
