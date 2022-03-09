@@ -296,12 +296,12 @@ class ActionQuestion(Action):
         #progreso(1,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         Updates(1,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         ConverterDate()
-        dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {dia} de {nombreMes} del  dosmil {anio} en nuestro sitio web, triple doble b .tarjetacencosud punto cl. Para mayor información, llamar al fono 223637830, entre 8  45 horas a 18  45 horas, de lunes a viernes, y sábados desde 9:00  a 14:00 horas. Le informamos que esta conversación fue grabada por su seguridad, muchas gracias. | EXIT') 
+        dispatcher.utter_message(f'{primernombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {fechaVencimiento} en nuestro sitio web, triple doble b .tarjetacencosud punto cl. Para mayor información, llamar al fono 223637830, entre 8  45 horas a 18  45 horas, de lunes a viernes, y sábados desde 9:00  a 14:00 horas. Le informamos que esta conversación fue grabada por su seguridad, muchas gracias. | EXIT') 
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         return []
 
-       
+#{dia} de {nombreMes} del  dosmil {anio}       
 ################################################
 ################### Si paga ####################
 ################################################
