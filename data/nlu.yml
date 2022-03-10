@@ -106,6 +106,7 @@ nlu:
     - te dije que [no](respuesta)
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
+    - [cuenteme](respuesta)
 - intent: saludos
   examples: |
     - hola
@@ -191,7 +192,6 @@ nlu:
 
 - intent: out_of_scope
   examples: |
-    - cuenteme
     - yo creo
     - ah ya
     - ya
