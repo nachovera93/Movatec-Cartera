@@ -235,7 +235,16 @@ nlu:
     - quien me dijo?
     - con quien
 
-    
+- intent: de_donde
+  examples: |
+    - donde?
+    - de donde llama disculpe?
+    - me repite de donde porfavor?
+    - de donde?
+    - donde
+    - de que parte?
+    - de que parte llama?
+    - de que parte es esto?
 
 
 
