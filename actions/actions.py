@@ -33,138 +33,7 @@ compromiso_p=0
 derivacion=None
 fecha_com=None
 entrega_info=None
-"""
-(host='10.3.0.5',
-                             user='root',
-                             password='T3c4dmin1234.',
-                             database='asterisk',
-                             )
 
-"""
-"""
-class DataBase:
-    def __init__(self):
-        self.connection=pymysql.connect(host='10.3.0.5',
-                             user='root',
-                             password='T3c4dmin1234.',
-                             database='asterisk',
-                             )
-        self.cursor = self.connection.cursor()
-        print("Conexion exitosa!")
-
-    def select_user(self, uniqueid):
-        sql = "select T0.vendor_lead_code, T0.first_name,T0.address1,T0.lead_id,T0.address2,T0.city,T0.owner,T1.list_name,T0.email,T2.campaign_name from vicidial_list T0 inner join vicidial_lists T1 on T0.list_id=T1.list_id inner join vicidial_campaigns T2 on T1.campaign_id=T2.campaign_id where T0.lead_id ='{}'".format(uniqueid,uniqueid)
-        
-        try:
-            self.cursor.execute(sql)
-            user = self.cursor.fetchone()
-            global monto
-            global nombre
-            global fechaVencimiento
-            global Campania
-            global oferta
-            global primernombre
-            print("user:",user)
-            primernombre = user[1]
-            monto = user[4]
-            nombre = user[2]
-            fechaVencimiento = user[5]
-            Campania = user[9]
-            oferta = user[8]
-            print("user: ", user)
-            print("Nombre:" , nombre)
-            print("Deuda monto:" , monto)
-            print("Campaña: " , Campania)
-            print("oferta: " , oferta)
-           
-              
-        except Exception as e:
-            raise
-    def close(self):
-        try:
-            self.connection.close()
-            print("Sesion cerrada exitosamente!")
-            #agi.verbose("Database cerrada exitosamente!")
-        except Exception as e:
-            raise
-
-
-class DataBase2:
-    def __init__(self):
-        self.connection=pymysql.connect(host='45.228.211.131',
-                             user='root',
-                             password='T3c4dmin1234.',
-                             database='asterisk',
-                             )
-        self.cursor = self.connection.cursor()
-        print("Conexion exitosa database2!")
-
-
-    def tipo_contacto(self,uniqueid):
-        sql = "SELECT tipo_contacto, max(fecha_llamada) from bot_movatec where lead_id='{}'".format(uniqueid)
-     
-        try:
-            self.cursor.execute(sql)
-            user = self.cursor.fetchone()
-            global tipo_contact
-            tipo_contact = user[0]
-          
-        except Exception as e:
-            raise 
-    def update_user(self,tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
-        sql = "UPDATE bot_movatec SET tipo_contacto='{}',motivo='{}',compromiso_p='{}',derivacion='{}',fecha_com='{}',entrega_info='{}' WHERE lead_id='{}'".format(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
-      
-        
-        try:
-            self.cursor.execute(sql)
-            self.connection.commit()
-        except Exception as e:
-            raise 
-    def close(self):
-        try:
-            self.connection.close()
-            print("Sesion cerrada exitosamente!")
-            #agi.verbose("Database cerrada exitosamente!")
-        except Exception as e:
-            raise
-
-database = DataBase()
-database2 = DataBase2()
-
-"""
-
-"""
-def variables():
-     global fechaVencimiento
-     global nombre
-     global monto
-     fechaVencimiento = "14/01/2021"
-     nombre = "Ignacio"
-     monto="100000"
-
-variables()
-""" 
-
-
-
-
-
-#ConverterDate()
-
-
-"""
-def llamarDB(uniqueid):
-    #database = DataBase()
-    database.select_user(uniqueid)
-
-def progreso(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
-    #database = DataBase()
-    database2.update_user(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
-
-def TipoContacto(uniqueid):
-    #database = DataBase()
-    database2.tipo_contacto(uniqueid)
-"""
 
 def Querys(uniqueid):
         payload={'action': 'get','id': f'{uniqueid}'}
@@ -344,6 +213,16 @@ class ActionSlotReset(Action):
     def run(self, dispatcher, tracker, domain):
         return[AllSlotsReset()]
 
+class ActionDonde(Action):
+    def name(self):
+        return "action_donde"
+
+    def run(self, dispatcher, tracker, domain):
+        global uniqueid
+        uniqueid = tracker.sender_id
+        #llamarDB(uniqueid)
+        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank.')
+        return []
 
 class ActionQuestion2(Action):
     def name(self):

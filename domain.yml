@@ -44,6 +44,7 @@ actions:
 - action_quien
 - action_ask_question2
 - action_hello2
+- action_donde
 
 forms:
   persona_form:
