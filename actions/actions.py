@@ -224,6 +224,19 @@ class ActionDonde(Action):
         dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank.')
         return []
 
+class ActionConoce(Action):
+    def name(self):
+        return "action_quien"
+
+    def run(self, dispatcher, tracker, domain):
+        #database = DataBase()
+        global uniqueid
+        uniqueid = tracker.sender_id
+        #llamarDB(uniqueid)
+        Querys(uniqueid)
+        dispatcher.utter_message(f'Me comunico con {nombre}?')
+        return []
+
 class ActionQuestion2(Action):
     def name(self):
         return "action_ask_question2"
