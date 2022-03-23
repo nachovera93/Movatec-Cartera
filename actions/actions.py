@@ -185,7 +185,7 @@ class ActionSiPaga(Action):
         #llamarDB(uniqueid)
         Querys(uniqueid)
         #progreso(4,motivo,4,derivacion,fecha_com,"Si",uniqueid)
-        Updates(4,motivo,4,derivacion,fecha_com,"Si",uniqueid,rut)
+        Updates(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         dispatcher.utter_message(f"Disculpe las molestias. Muchas gracias | EXIT")
         
         return []
