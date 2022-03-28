@@ -15,8 +15,8 @@ import requests
 import json
 #url = "http://172.16.1.72/webservice-php-json/index.php"
 
-url = "http://45.228.211.133:8080/webservice-php-json/index.php"
-
+#url = "http://45.228.211.133:8080/webservice-php-json/index.php"
+url = "https://bot.movatec.cl/webservice-php-json/index.php"
 global SiPaga
 global NoPaga
 global motivo
@@ -170,7 +170,7 @@ class ActionQuestion(Action):
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         return []
 
-#{dia} de {nombreMes} del  dosmil {anio}       
+      
 ################################################
 ################### Si paga ####################
 ################################################
