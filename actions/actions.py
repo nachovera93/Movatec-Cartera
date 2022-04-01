@@ -144,7 +144,7 @@ class ActionHello2(Action):
         Querys(uniqueid)
         #progreso(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         Updates(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
-        dispatcher.utter_message(f'Disculpe, Me comunico con {nombre}?')
+        dispatcher.utter_message(f'Disculpe, me comunico con {nombre}?')
         return []
 
 
@@ -165,7 +165,7 @@ class ActionQuestion(Action):
         #progreso(1,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         Updates(1,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         ConverterDate()
-        dispatcher.utter_message(f'{nombre}, Le recordamos que se encuentra disponible el pago de su cuota que vence el {fechaVencimiento} en nuestro sitio web triple doble b .tarjetacencosud punto cl. Para mayor información, llamar al fono 223637830, de lunes a viernes entre 8 45 a 18 45 horas, y sábados desde 9:00 a 14:00 horas. También le informamos que esta conversación fue grabada para su seguridad. Muchas gracias. | EXIT') 
+        dispatcher.utter_message(f'{nombre}, por encargo de tarjeta cencosud, le informamos que el pago de su cuota con vencimiento el {fechaVencimiento}, ya está disponible en nuestro sitio triple doble b .tarjetacencosud punto cl. Para más información, lo invitamos a contactarnos al 223637830, de lunes a viernes entre 8 45 a 18 45 horas, sábados desde 9:00 a 14:00 horas. Agradecemos su tiempo y le comunicamos que esta conversación fue grabada como respaldo de la información entregada. | EXIT') 
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         return []
@@ -186,7 +186,7 @@ class ActionSiPaga(Action):
         Querys(uniqueid)
         #progreso(4,motivo,4,derivacion,fecha_com,"Si",uniqueid)
         Updates(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
-        dispatcher.utter_message(f"Disculpe las molestias. Muchas gracias | EXIT")
+        dispatcher.utter_message(f"Disculpe las molestias. Gracias por respondernos | EXIT")
         
         return []
 
@@ -221,7 +221,7 @@ class ActionDonde(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         #llamarDB(uniqueid)
-        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank.')
+        dispatcher.utter_message(f'Estamos llamando por encargo de tarjeta cencosud scotiabank.')
         return []
 
 class ActionConoce(Action):
