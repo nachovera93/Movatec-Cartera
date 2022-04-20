@@ -6,7 +6,13 @@ rules:
       - intent: nlu_fallback
       - action: utter_default_repetir
    
- 
+
+  - rule: para que
+    steps:
+      - intent: para_que
+      - action: utter_para_que
+   
+
   - rule: eres bot1?
     steps:
       - action: action_hello

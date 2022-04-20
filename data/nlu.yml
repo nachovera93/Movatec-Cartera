@@ -142,6 +142,13 @@ nlu:
     - Hola gertrudis
     - holas
     - Alo
+- intent: para_que
+  examples: |
+    - para que necesita?
+    - y para que?
+    - para que?
+    - pues para que
+    
 - intent: despedida
   examples: |
     - adios

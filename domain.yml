@@ -14,6 +14,7 @@ intents:
 - despedida
 - soy_yo
 - me_repite
+- para_que
 
 entities:
 - respuesta
@@ -33,6 +34,8 @@ responses:
   - text: Muchas gracias por su tiempo, adiós | EXIT
   utter_bot:
   - text: Estamos llamando por encargo de tarjetas cencosud scotiabank y soy un asistente virtual.
+  utter_para_que:
+  - text: Para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana.
 
 actions:
 - action_hello
