@@ -35,7 +35,7 @@ responses:
   utter_bot:
   - text: Estamos llamando por encargo de tarjetas cencosud scotiabank y soy un asistente virtual.
   utter_para_que:
-  - text: Para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana.
+  - text: Para informarle acerca de el pago de su cuota que esta en vencimiento.
 
 actions:
 - action_hello
